@@ -58,8 +58,9 @@ class php::params {
   }
 
   $config_file = $::operatingsystem ? {
-    /(?i:Ubuntu|Debian|Mint|SLES|OpenSuSE)/ => '/etc/php5/apache2/php.ini',
-    default                                 => '/etc/php.ini',
+    /(?i:Ubuntu|Debian|Mint)/ => '/etc/php5/php.ini',
+    /(?i:SLES|OpenSuSE)/      => '/etc/php5/apache2/php.ini',
+    default                   => '/etc/php.ini',
   }
 
   $config_file_mode = $::operatingsystem ? {
