@@ -235,7 +235,7 @@ class php (
   package { 'php':
     ensure => $php::manage_package,
     name   => $php::package,
-    install_options => [ $php::options ],
+    install_options => '--disablerepo=remi',
   }
   
 notify { 'PHPTest': 
