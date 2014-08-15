@@ -237,6 +237,11 @@ class php (
     name   => $php::package,
     install_options => [ $php::options ],
   }
+  
+notify { 'PHPTest': 
+  withpath => true,
+  name     => "my php install options are $php::options",
+}
 
   file { 'php.conf':
     ensure  => $php::manage_file,
