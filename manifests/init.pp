@@ -235,6 +235,7 @@ class php (
   package { 'php':
     ensure => $php::manage_package,
     name   => $php::package,
+    install_options => [ $options ],
   }
 
   file { 'php.conf':
